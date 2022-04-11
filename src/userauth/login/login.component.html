@@ -1,0 +1,141 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-40">
+    <div class="row d-flex justify-content-center align-items-center h-20 card-padding-class">
+      <div class="col-10 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-white text-black" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+          
+              <form #loginform="ngForm" (ngSubmit)="loginUser()">
+                <small class="text-danger">{{msg}}</small>
+                  
+                  <div class="form-outline mb-4">
+                    <small class="text-danger" [class.d-none]="email.valid || email.untouched">*required field with correct format</small>
+                    <input type="email"  class="form-control" name="email" [(ngModel)]="users.userEmail" required 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"/>
+                    <label class="form-label" for="form2Example1">Email address</label>
+                  </div>
+                
+                  
+                  <div class="form-outline mb-4">
+                    <small class="text-danger" [class.d-none]="password.valid || password.untouched">*required field</small>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="users.userPassword" required #password="ngModel"
+                    [class.is-invalid]="password.invalid && password.touched"/>
+                    <label class="form-label" for="form2Example2">Password</label>
+                  </div>
+                
+                  
+                  <div class="row mb-4">
+                    <div class="col d-flex justify-content-center">
+                      
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                        <label class="form-check-label" for="form2Example31"> Remember me </label>
+                      </div>
+                    </div>
+                
+                    <div class="col">
+                      
+                      <a href="">Forgot password?</a>
+                    </div>
+                  </div>
+              
+                  <button type="submit" [disabled]="loginform.form.invalid"  class="btn btn-primary btn-block mb-4">Sign in</button>
+                
+                  
+                  <div class="text-center">
+                    <p>Not a member? <a (click)="goToRegistration()">Register</a></p>
+                    
+                  </div>
+                </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="d-flex justify-content-center flex-column">
+  <h2 class="">Login</h2>
+<div class="d-flex justify-content-center pt-5">  
+<form #loginform="ngForm" (ngSubmit)="loginUser()">
+  <small class="text-danger">{{msg}}</small>
+    
+    <div class="form-outline mb-4">
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched">*required field with correct format</small>
+      <input type="email"  class="form-control" name="email" [(ngModel)]="users.userEmail" required 
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"/>
+      <label class="form-label" for="form2Example1">Email address</label>
+    </div>
+  
+    
+    <div class="form-outline mb-4">
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">*required field</small>
+      <input type="password" class="form-control" name="password" [(ngModel)]="users.userPassword" required #password="ngModel"
+      [class.is-invalid]="password.invalid && password.touched"/>
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+  
+    
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+          <label class="form-check-label" for="form2Example31"> Remember me </label>
+        </div>
+      </div>
+  
+      <div class="col">
+        
+        <a href="">Forgot password?</a>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginform.form.invalid"  class="btn btn-primary btn-block mb-4">Sign in</button>
+  
+    
+    <div class="text-center">
+      <p>Not a member? <a (click)="goToRegistration()">Register</a></p>
+      
+    </div>
+  </form>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+      <!-- <p>or sign up with:</p> -->
+      <!-- <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+  
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button> --> 

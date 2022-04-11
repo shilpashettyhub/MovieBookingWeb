@@ -1,0 +1,67 @@
+<section class="gradient-custom">
+  <div class="container py-5 h-40">
+    <div class="row d-flex justify-content-center align-items-center h-20">
+      <div class="col-10 col-md-8 col-lg-6 col-xl-5">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="card-body text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-3">
+              <div class="class-header border-bottom">
+                <h2 class="fw-bold mb-2 text-uppercase text-danger">Booking Details</h2>
+                <span>(Please check the details before proceeding to payments page)</span>
+              </div>
+
+              <div class="card-body pt-5">
+                <p>User mail Id: {{userId}}</p>
+
+                <!-- <p>Selected Location : <small>{{selectedLocationName}}</small> </p> -->
+
+                <p>Selected Theatre City: <small>{{selectedTheatreObject.theatreCity}}</small></p>
+
+                <p>Selected Theatre Location: <small>{{selectedTheatreObject.theatreLocation}}</small></p>
+
+                <p>Selected Theatre : <small>{{selectedTheatreObject.theatreName}}</small></p>
+
+                <p>Selected Movie Name: {{selectedShowObject.movieName}}</p>
+
+                <p>Date: {{selectedShowObject.date}}</p>
+
+                <p>Time: {{selectedShowObject.time}}</p>
+                
+                <p>Selected seats: </p>
+                <div *ngFor="let seat of selectedSeatList">
+                  <p><strong>{{seat}}</strong></p>
+                </div>
+
+                <h2 class="text-danger">Total cost : {{selectedShowObject.costPerSeat*selectedSeatList.length}}</h2>
+
+                <button class="mt-5 button-manual-css" (click)="gotoPaymentsPage()">Confirm</button>
+
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <p>Selected Location : <small>{{selectedLocationName}}</small> </p>
+
+<p>Selected Theatre : <small>{{selectedTheatreObject.theatreName}}</small></p>
+
+{{selectedShowObject.movieName}}
+
+  <div class="card card-block" *ngFor="let seat of selectedSeatList">
+    <h4 class="card-title">{{seat}}</h4>
+  </div>
+
+  <label>{{selectedShowObject.costPerSeat*selectedSeatList.length}}</label>
+
+<button (click)="gotoPaymentsPage()">Confirm</button>   -->

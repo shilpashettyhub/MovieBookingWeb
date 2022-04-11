@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="text-center" style="margin-top: 30px; margin-bottom: 30px;">Seat Layout</h2>
+    <div class=" row">
+        <div class="card card-block col-1 card-manual-css" *ngFor="let seat of seatsList"
+            (click)="isinredlist(seat.compositeId.seatNumber)? null :changesettings(seat)">
+
+            <h2 class="card-title text-center" [style.color]="seat.isOccupied==='True'? 'red':'green'">
+                {{seat.compositeId.seatNumber}}</h2>
+            <p class="card-text text-center">
+                <img src="../../assets/armchair-removebg-preview.png" height="30px" width="30px">
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<button type="submit" style="margin-left: 49vw; margin-top: 10vh;" (click)="goToBookingsPage()" [disabled]="selectedSeatList.length===0"> Done </button>

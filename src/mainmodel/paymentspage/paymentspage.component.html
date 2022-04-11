@@ -1,0 +1,51 @@
+<p>paymentspage works!</p>
+
+<h1>Payments System</h1>
+
+
+<form #cardinfoForm="ngForm">
+
+    <div class="form-outline form-white mb-4">
+        <small class="text-danger" [class.d-none]="usercardname.valid || usercardname.untouched ">*Required field</small>
+        <input type="text" id="usercardname" class="form-control form-control-lg" #usercardname="ngModel" name="usercardname"
+         [(ngModel)]="cardinfoobj.cardName" required [class.is-invalid]="usercardname.invalid && usercardname.touched"/>
+        <label class="form-label" for="usercardname">Card Holder Name</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+        <small class="text-danger" [class.d-none]="usercardnumber.valid || usercardnumber.untouched ">*Required field with 16 digit number</small>
+        <input type="number" id="usercardnumber" class="form-control form-control-lg" #usercardnumber="ngModel" name="usercardnumber"
+         [(ngModel)]="cardinfoobj.cardNumber" required [class.is-invalid]="usercardnumber.invalid && usercardnumber.touched"
+         max="9999999999999999" min="1000000000000000"/>
+        <label class="form-label" for="usercardnumber">Card Number</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+        <small class="text-danger" [class.d-none]="usercardcvv.valid || usercardcvv.untouched ">*Required field with 3 digits</small>
+        <input type="text" id="usercardcvv" class="form-control form-control-lg" #usercardcvv="ngModel" name="usercardcvv"
+         [(ngModel)]="cardinfoobj.cvv" required maxlength="3" [class.is-invalid]="usercardcvv.invalid && usercardcvv.touched"
+         pattern="[0-9][0-9][0-9]"/>
+        <label class="form-label" for="usercardcvv">CVV</label>
+    </div>
+
+
+    <div class="form-outline form-white mb-4">
+        <small class="text-danger" [class.d-none]="usercardexpdate.valid || usercardexpdate.untouched ">*Required field with 3 digits</small>
+        <input type="month" id="usercardexpdate" class="form-control form-control-lg" #usercardexpdate="ngModel" name="usercardexpdate"
+         [(ngModel)]="cardinfoobj.expDate" required [class.is-invalid]="usercardexpdate.invalid && usercardexpdate.touched" 
+         min="2022-05"/>
+        <label class="form-label" for="usercardexpdate">Expiry Date</label>
+    </div>
+
+    <select (click)="setcardtype($event)">
+        <option value="" disabled selected>Select your option</option>
+        <option>Visa</option>
+        <option>Master Card</option>
+        <option>Discover</option>
+        <option>American Express</option>
+    </select>
+    <br />
+    <button type="submit" (click)="confirmpayment()">Make Payment</button>
+</form>
+
+

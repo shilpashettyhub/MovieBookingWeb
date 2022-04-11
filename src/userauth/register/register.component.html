@@ -1,0 +1,116 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-40">
+    <div class="row d-flex justify-content-center align-items-center h-20 card-padding-class">
+      <div class="col-10 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-white text-black" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+              
+              <form #registerform="ngForm" (ngSubmit)="registerUser()">
+      
+                <small class="text-danger">{{msg}}</small>
+              <div class="form-outline mb-4">
+                <small class="text-danger" [class.d-none]="uname.valid || uname.untouched">*required field</small>
+                <input type="text"  class="form-control" name="username" [(ngModel)]="users.userName" required #uname="ngModel" 
+                [class.is-invalid]="uname.invalid && uname.touched"/>
+                <label class="form-label" for="form2Example1">Username</label>
+              </div>
+        
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <small class="text-danger" [class.d-none]="email.valid || email.untouched">*required field with correct format</small>
+                  <input type="email"  class="form-control" name="email" [(ngModel)]="users.userEmail" required 
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"/>
+                  <label class="form-label" for="form2Example1">Email address</label>
+                </div>
+              
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <small class="text-danger" [class.d-none]="password.valid || password.untouched">*required field</small>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="users.userPassword" required #password="ngModel"
+                  [class.is-invalid]="password.invalid && password.touched"/>
+                  <label class="form-label" for="form2Example2">Password</label>
+                </div>
+              
+                <!-- Submit button -->
+                <button type="submit" [disabled]="registerform.form.invalid"  class="btn btn-primary btn-block mb-4">Register</button>
+              
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>Already a member? <a (click)="goToLogIn()">Login</a></p>
+                  
+                </div>
+              </form>
+              
+                
+  
+      
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- <div class="d-flex justify-content-center">
+    <form #registerform="ngForm" (ngSubmit)="registerUser()">
+      
+        <small class="text-danger">{{msg}}</small>
+      <div class="form-outline mb-4">
+        <small class="text-danger" [class.d-none]="uname.valid || uname.untouched">*required field</small>
+        <input type="text"  class="form-control" name="username" [(ngModel)]="users.userName" required #uname="ngModel" 
+        [class.is-invalid]="uname.invalid && uname.touched"/>
+        <label class="form-label" for="form2Example1">Username</label>
+      </div>
+
+        <div class="form-outline mb-4">
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">*required field with correct format</small>
+          <input type="email"  class="form-control" name="email" [(ngModel)]="users.userEmail" required 
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"/>
+          <label class="form-label" for="form2Example1">Email address</label>
+        </div>
+      
+        <div class="form-outline mb-4">
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched">*required field</small>
+          <input type="password" class="form-control" name="password" [(ngModel)]="users.userPassword" required #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched"/>
+          <label class="form-label" for="form2Example2">Password</label>
+        </div>
+      
+        <button type="submit" [disabled]="registerform.form.invalid"  class="btn btn-primary btn-block mb-4">Register</button>
+      
+        <div class="text-center">
+          <p>Already a member? <a (click)="goToLogIn()">Login</a></p>
+          
+        </div>
+      </form>
+    </div> -->
+    
+
+
+
+
+
+    <!-- <p>or sign up with:</p> -->
+          <!-- <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+      
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-google"></i>
+          </button>
+      
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+          </button>
+      
+          <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-github"></i>
+          </button> -->

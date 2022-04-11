@@ -1,0 +1,25 @@
+<div class="backdesign">
+<div class="py-5 h-40">
+  <h2 class="text-center fw-bold mb-2 text-uppercase pt-3" style="color:  #ff3300;">Select your prefered location</h2>
+  <div class="d-flex justify-content-center list-class">
+    <!-- <div class="col-10 col-md-8 col-lg-6 col-xl-5"> -->
+
+
+    
+
+<ul class="list-group list-group-flush bg-none" >
+  <li class="list-group-item " style="list-style-type:none; padding-bottom: 3px; background-color: transparent;" *ngFor="let city of location"
+    (click)="routeToTheater(city)" >
+    <img src="../../assets/icons8-place-marker-unscreen.gif" style="width: 20px; height: 20px;">
+    <h4 class="d-inline" style="padding-left: 10px; color:rgb(203, 11, 241);">{{city}}</h4>
+
+  </li>
+</ul>
+
+
+
+
+    </div>
+  </div>
+</div>
+<!-- </div> -->
