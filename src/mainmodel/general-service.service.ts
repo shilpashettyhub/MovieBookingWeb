@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Bookinginfo } from './bookinginfo';
 import { Cardinfo } from './cardinfo';
 import { Combinedcardbookinfo } from './combinedcardbookinfo';
+import { SeatEntity } from './seat-entity';
 
 @Injectable({
   providedIn: 'root'
@@ -113,5 +114,14 @@ export class GeneralServiceService {
     const combinedCardBookInfoObj = new Combinedcardbookinfo(this.bookingObject, this.cardInfoObject);
     console.log(combinedCardBookInfoObj);
     return this._http.post<any>("https://localhost:8087/checkcarddetails", combinedCardBookInfoObj);
+  }
+
+  public setConfirmedSeatObjectTrue(seat: string): Observable<any> {
+    const seatobj = new SeatEntity();
+    seatobj.isOccupied = "false";
+    seatobj.compositeId.seatNumber = seat;
+    seatobj.compositeId.showId = this.selectedShowId;
+    seatobj.compositeId.theatreId = this.selectedTheatreId;
+    return this._http.post<any>("http://localhost:8086/changeseatstatus", seatobj);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegistrationService } from 'src/userauth/registration.service';
 import { Bookinginfo } from '../bookinginfo';
 import { GeneralServiceService } from '../general-service.service';
 import { ShowEntity } from '../show-entity';
@@ -28,6 +29,8 @@ export class BookingPageComponent implements OnInit {
   setvalues()
   {
     this.userId = this._service.getuserId();
+
+    //this.userId = this._userauthservice.
 
     this.selectedLocationName = this._service.getselectedLocation();
 

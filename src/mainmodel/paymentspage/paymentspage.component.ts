@@ -14,6 +14,8 @@ import { Cardinfo } from '../cardinfo';
 export class PaymentspageComponent implements OnInit {
   cardinfoobj = new Cardinfo();
 
+  selectedSeatId: string[] = [];
+
   constructor(private _service:GeneralServiceService, private _router:Router) { }
 
   ngOnInit(): void {
@@ -27,8 +29,27 @@ export class PaymentspageComponent implements OnInit {
 
   confirmpayment()
   {
+
     this._service.setCardInfoObject(this.cardinfoobj);
-    
+    this._service.postCardBookingObject().subscribe(
+      data => {
+        this.selectedSeatId = this._service.getselectedSeatId();
+        for(let seat in this.selectedSeatId)
+        {
+          this._service.setConfirmedSeatObjectTrue(seat).subscribe(data, error=>{console.log(error);/* undo flags of seat*/});
+        }
+        this._router.navigate(['']);
+      },
+      error=> {
+        //display error
+        console.log(error);
+      }
+    );
+
+
+    //send data to backend
+    //if good change status of seat
+    //reroute to new page
   }
 
 }
