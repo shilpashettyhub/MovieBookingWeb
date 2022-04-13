@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingPageComponent } from 'src/mainmodel/booking-page/booking-page.component';
+import { FinalpageComponent } from 'src/mainmodel/finalpage/finalpage.component';
 import { ListLocationComponent } from 'src/mainmodel/list-location/list-location.component';
 import { PaymentspageComponent } from 'src/mainmodel/paymentspage/paymentspage.component';
 import { SeatListComponent } from 'src/mainmodel/seat-list/seat-list.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
    {path:'shows', component:ShowListComponent},
    {path:'seats', component:SeatListComponent},
    {path:'bookinginfo', component:BookingPageComponent},
-   {path:'paymentspage', component:PaymentspageComponent}
+   {path:'paymentspage', component:PaymentspageComponent},
+   {path:'finalpage', component:FinalpageComponent}
 ];
 
 @NgModule({

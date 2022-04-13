@@ -5,6 +5,7 @@ import { Bookinginfo } from './bookinginfo';
 import { Cardinfo } from './cardinfo';
 import { Combinedcardbookinfo } from './combinedcardbookinfo';
 import { SeatEntity } from './seat-entity';
+import { Changeseatflag } from './changeseatflag';
 
 @Injectable({
   providedIn: 'root'
@@ -111,17 +112,31 @@ export class GeneralServiceService {
   }
 
   public postCardBookingObject(): Observable<any> {
-    const combinedCardBookInfoObj = new Combinedcardbookinfo(this.bookingObject, this.cardInfoObject);
+    const seatList: Array<string> = [];
+
+    for(let ele in this.selectedSeatId)
+    {
+      seatList.push(this.selectedSeatId[ele]);
+    }
+
+    //this.selectedSeatId
+    const combinedCardBookInfoObj = new Combinedcardbookinfo(this.bookingObject, this.cardInfoObject, seatList);
     console.log(combinedCardBookInfoObj);
-    return this._http.post<any>("https://localhost:8087/checkcarddetails", combinedCardBookInfoObj);
+    return this._http.post<any>("http://localhost:8087/checkcarddetails", combinedCardBookInfoObj);
   }
 
-  public setConfirmedSeatObjectTrue(seat: string): Observable<any> {
-    const seatobj = new SeatEntity();
-    seatobj.isOccupied = "false";
-    seatobj.compositeId.seatNumber = seat;
-    seatobj.compositeId.showId = this.selectedShowId;
-    seatobj.compositeId.theatreId = this.selectedTheatreId;
-    return this._http.post<any>("http://localhost:8086/changeseatstatus", seatobj);
-  }
+  // public setConfirmedSeatObjectTrue(seat: string): Observable<any> {
+  //   const seatobj = new SeatEntity();
+  //   seatobj.isOccupied = "false";
+  //   seatobj.compositeId.seatNumber = seat;
+  //   seatobj.compositeId.showId = this.selectedShowId;
+  //   seatobj.compositeId.theatreId = this.selectedTheatreId;
+  //   return this._http.post<any>("http://localhost:8086/changeseatstatus", seatobj);
+  // }
+
+  // public changeSeatObjectFlag(): Observable<any> {
+  //   const changeseatflagobj = new Changeseatflag(this.selectedTheatreId, this.selectedShowId, this.selectedSeatId);
+  //   console.log(changeseatflagobj);
+  //   return this._http.post<any>("http:localhost:8082/changeseatflag", changeseatflagobj);
+  // }
 }

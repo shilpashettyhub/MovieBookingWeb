@@ -16,6 +16,8 @@ export class PaymentspageComponent implements OnInit {
 
   selectedSeatId: string[] = [];
 
+  msg!: string;
+
   constructor(private _service:GeneralServiceService, private _router:Router) { }
 
   ngOnInit(): void {
@@ -33,16 +35,26 @@ export class PaymentspageComponent implements OnInit {
     this._service.setCardInfoObject(this.cardinfoobj);
     this._service.postCardBookingObject().subscribe(
       data => {
-        this.selectedSeatId = this._service.getselectedSeatId();
-        for(let seat in this.selectedSeatId)
-        {
-          this._service.setConfirmedSeatObjectTrue(seat).subscribe(data, error=>{console.log(error);/* undo flags of seat*/});
-        }
-        this._router.navigate(['']);
+        console.log(data);
+
+        // this.selectedSeatId = this._service.getselectedSeatId();
+        // for(let seat in this.selectedSeatId)
+        // {
+        //   this._service.setConfirmedSeatObjectTrue(seat).subscribe(data, error=>{console.log(error);/* undo flags of seat*/});
+        // }
+        // this._router.navigate(['']);
+        // this._service.changeSeatObjectFlag().subscribe(
+        //   data=> {
+
+        //   }
+        //   );
+        this._router.navigate(['finalpage']);
+
       },
       error=> {
         //display error
         console.log(error);
+        this.msg = "Incorrect card details!!!. Please try again";
       }
     );
 

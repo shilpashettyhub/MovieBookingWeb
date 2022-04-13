@@ -7,6 +7,7 @@ import { SeatListComponent } from './seat-list/seat-list.component';
 import { BookingPageComponent } from './booking-page/booking-page.component';
 import { PaymentspageComponent } from './paymentspage/paymentspage.component';
 import { FormsModule } from '@angular/forms';
+import { FinalpageComponent } from './finalpage/finalpage.component';
 
 
 
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     ShowListComponent,
     SeatListComponent,
     BookingPageComponent,
-    PaymentspageComponent
+    PaymentspageComponent,
+    FinalpageComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     ShowListComponent,
     SeatListComponent,
     BookingPageComponent,
-    PaymentspageComponent
+    PaymentspageComponent,
+    FinalpageComponent
   ]
 })
 export class MainmodelModule { }
