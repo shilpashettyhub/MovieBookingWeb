@@ -1,4 +1,42 @@
 .card-manual-css:hover{
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    box-shadow: 0 10px 20px rgba(214, 13, 13, 0.767), 0 4px 8px rgba(189, 18, 18, 0.808);
+}
+
+.card-manual-css{
+    /* background-color: rgba(94, 91, 91, 0.336); */
+    
+     background-color: transparent;
+}
+
+.bgdesign{
+    /* background-image: url("../../assets/deadpool.png");
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100pc;
+      width: 100pc; */
+      /* background-color: rgb(12, 12, 12); */
+      
+      background-image: url("../../assets/seatsulta.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100pc;
+      width: 100pc; 
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(241, 8, 8, 0.856), 0 4px 8px rgba(231, 12, 12, 0.822);
+    border-color:rgb(240, 226, 226);
+    color: rgb(255, 0, 0);
+    background-color: transparent;
+}
+
+button{
+    margin-left: 49vw; 
+    margin-top: 10vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: gray;
+    color: white;
 }

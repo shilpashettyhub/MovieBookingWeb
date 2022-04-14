@@ -1,6 +1,6 @@
 .card-manual-css:hover{
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.884), 0 4px 8px rgba(255, 255, 255, 0.733);
 }
 
 /* .backdesign{
@@ -20,5 +20,18 @@
     background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
   
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+    
+  }
+
+  .background-image{
+      background-image: url("../../assets/theatrebackground.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      /* position: -webkit-sticky;
+      position: sticky; */
+      /* top: 0; */
+    height: 100pc;
+    width: 100pc;
   }

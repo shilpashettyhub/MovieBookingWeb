@@ -11,3 +11,16 @@
     
     height: 100vh;
 } */
+
+img.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+
+.row-css-class{
+    width: 100vw; height: 100vh;
+    background-image: url("../../assets/locationbg3.png");
+    background-size: cover;
+    opacity: 0.9;
+}
