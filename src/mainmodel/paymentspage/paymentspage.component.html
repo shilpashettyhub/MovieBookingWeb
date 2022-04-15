@@ -1,69 +1,81 @@
 <section class="gradient-custom">
     <div class="container py-5 h-40">
-      <div class="row d-flex justify-content-center align-items-center h-20">
-        <div class="col-10 col-md-8 col-lg-6 col-xl-5">
-          <div class="card" style="border-radius: 1rem;">
+        <div class="row d-flex justify-content-center align-items-center h-20">
+            <div class="col-10 col-md-8 col-lg-6 col-xl-5">
+                <div class="card" style="border-radius: 1rem; ">
 
-          <div class="card-header text-center">
-<h1>Payments System</h1>
-</div>
-
-
-<div class="card-body">
-<small class="text-danger">{{msg}}</small>
-<form #cardinfoForm="ngForm">
-    <p class="text-center">Select card type:</p>
-    <div class="cc-selector" (click)="setcardtype($event)">
-        <input id="visa" type="radio" name="credit-card" value="Visa" />
-        <label class="drinkcard-cc visa" for="visa"></label>
-        <input id="mastercard" type="radio" name="credit-card" value="Master Card" />
-        <label class="drinkcard-cc mastercard" for="mastercard"></label>
-        <input id="americanexpress" type="radio" name="credit-card" value="American Express" />
-        <label class="drinkcard-cc americanexpress" for="americanexpress"></label>
-        <input id="discover" type="radio" name="credit-card" value="Discover" />
-        <label class="drinkcard-cc discover" for="discover"></label>
-    </div>
+                    <div class="card-header text-center">
+                        <h1 class="">Payments System</h1>
+                    </div>
 
 
-    <div class="form-outline form-white mb-4">
-        <small class="text-danger" [class.d-none]="usercardname.valid || usercardname.untouched ">*Required field</small>
-        <input type="text" id="usercardname" class="form-control form-control-lg" #usercardname="ngModel" name="usercardname"
-         [(ngModel)]="cardinfoobj.cardName" required [class.is-invalid]="usercardname.invalid && usercardname.touched"/>
-        <label class="form-label" for="usercardname">Card Holder Name</label>
-    </div>
-
-    <div class="form-outline form-white mb-4">
-        <small class="text-danger" [class.d-none]="usercardnumber.valid || usercardnumber.untouched ">*Required field with 16 digit number</small>
-        <input type="number" id="usercardnumber" class="form-control form-control-lg" #usercardnumber="ngModel" name="usercardnumber"
-         [(ngModel)]="cardinfoobj.cardNumber" required [class.is-invalid]="usercardnumber.invalid && usercardnumber.touched"
-         max="9999999999999999" min="1000000000000000"/>
-        <label class="form-label" for="usercardnumber">Card Number</label>
-    </div>
-
-    <div class="form-outline form-white mb-4">
-        <small class="text-danger" [class.d-none]="usercardcvv.valid || usercardcvv.untouched ">*Required field with 3 digits</small>
-        <input type="text" id="usercardcvv" class="form-control form-control-lg" #usercardcvv="ngModel" name="usercardcvv"
-         [(ngModel)]="cardinfoobj.cvv" required maxlength="3" [class.is-invalid]="usercardcvv.invalid && usercardcvv.touched"
-         pattern="[0-9][0-9][0-9]"/>
-        <label class="form-label" for="usercardcvv">CVV</label>
-    </div>
+                    <div class="card-body">
+                        <small class="text-danger">{{msg}}</small>
+                        <form #cardinfoForm="ngForm">
+                            <p class="text-center">Select card type:</p>
+                            <div class="cc-selector" (click)="setcardtype($event)">
+                                <input id="visa" type="radio" name="credit-card" value="Visa" />
+                                <label class="drinkcard-cc visa" for="visa"></label>
+                                <input id="mastercard" type="radio" name="credit-card" value="Master Card" />
+                                <label class="drinkcard-cc mastercard" for="mastercard"></label>
+                                <input id="americanexpress" type="radio" name="credit-card" value="American Express" />
+                                <label class="drinkcard-cc americanexpress" for="americanexpress"></label>
+                                <input id="discover" type="radio" name="credit-card" value="Discover" />
+                                <label class="drinkcard-cc discover" for="discover"></label>
+                            </div>
 
 
-    <div class="form-outline form-white mb-4">
-        <small class="text-danger" [class.d-none]="usercardexpdate.valid || usercardexpdate.untouched ">*Required field with 3 digits</small>
-        <input type="month" id="usercardexpdate" class="form-control form-control-lg" #usercardexpdate="ngModel" name="usercardexpdate"
-         [(ngModel)]="cardinfoobj.expDate" required [class.is-invalid]="usercardexpdate.invalid && usercardexpdate.touched" 
-         min="2022-05"/>
-        <label class="form-label" for="usercardexpdate">Expiry Date</label>
-    </div>
-    
+                            <div class="form-outline form-white mb-4">
+                                <small class="text-danger"
+                                    [class.d-none]="usercardname.valid || usercardname.untouched ">*Required
+                                    field</small>
+                                <input type="text" id="usercardname" class="form-control form-control-lg"
+                                    #usercardname="ngModel" name="usercardname" [(ngModel)]="cardinfoobj.cardName"
+                                    required [class.is-invalid]="usercardname.invalid && usercardname.touched" />
+                                <label class="form-label" for="usercardname">Card Holder Name</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <small class="text-danger"
+                                    [class.d-none]="usercardnumber.valid || usercardnumber.untouched ">*Required field
+                                    with 16 digit number</small>
+                                <input type="number" id="usercardnumber" class="form-control form-control-lg"
+                                    #usercardnumber="ngModel" name="usercardnumber" [(ngModel)]="cardinfoobj.cardNumber"
+                                    required [class.is-invalid]="usercardnumber.invalid && usercardnumber.touched"
+                                    max="9999999999999999" min="1000000000000000" />
+                                <label class="form-label" for="usercardnumber">Card Number</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <small class="text-danger"
+                                    [class.d-none]="usercardcvv.valid || usercardcvv.untouched ">*Required field with 3
+                                    digits</small>
+                                <input type="text" id="usercardcvv" class="form-control form-control-lg"
+                                    #usercardcvv="ngModel" name="usercardcvv" [(ngModel)]="cardinfoobj.cvv" required
+                                    maxlength="3" [class.is-invalid]="usercardcvv.invalid && usercardcvv.touched"
+                                    pattern="[0-9][0-9][0-9]" />
+                                <label class="form-label" for="usercardcvv">CVV</label>
+                            </div>
+
+
+                            <div class="form-outline form-white mb-4">
+                                <small class="text-danger"
+                                    [class.d-none]="usercardexpdate.valid || usercardexpdate.untouched ">*Required field
+                                    with 3 digits</small>
+                                <input type="month" id="usercardexpdate" class="form-control form-control-lg"
+                                    #usercardexpdate="ngModel" name="usercardexpdate" [(ngModel)]="cardinfoobj.expDate"
+                                    required [class.is-invalid]="usercardexpdate.invalid && usercardexpdate.touched"
+                                    min="2022-05" />
+                                <label class="form-label" for="usercardexpdate">Expiry Date</label>
+                            </div>
 
 
 
 
 
 
-<!-- <div class="form-outline form-white mb-4">
+
+                            <!-- <div class="form-outline form-white mb-4">
     <small class="text-danger" [class.d-none]="usercardnumber.valid || usercardnumber.untouched ">*Required field with 16 digit number</small>
     <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" id="usercardnumber" class="form-control form-control-lg" #usercardnumber="ngModel" name="usercardnumber"
      [(ngModel)]="cardinfoobj.cardNumber" required [class.is-invalid]="usercardnumber.invalid && usercardnumber.touched"
@@ -72,16 +84,17 @@
 </div> -->
 
 
-    <div class="align-item-center justify-content-center container d-flex mb-4">
-    <button class="button-manual-css" type="submit" (click)="confirmpayment()">Make Payment</button>
-    </div>
+                            <div class="align-item-center justify-content-center container d-flex mb-4">
+                                <button class="button-manual-css" type="submit" (click)="confirmpayment()">Make
+                                    Payment</button>
+                            </div>
 
-</form>
+                        </form>
 
-</div>
-          </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 </section>
 

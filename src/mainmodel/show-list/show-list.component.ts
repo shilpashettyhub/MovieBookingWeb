@@ -31,7 +31,7 @@ export class ShowListComponent implements OnInit {
   goToSeatsPage(selectedShowId:string)
   {
     this._service.setselectedShowId(selectedShowId);
-    this._router.navigate(['seats']);
+    this._router.navigate(['movieinfo']);
   }
 
 }

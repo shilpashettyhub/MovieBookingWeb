@@ -1,0 +1,59 @@
+<div class="bg-dark">
+<div class="container">
+    <div class="row">
+        <div class="card my-5" style="background-color: rgba(236, 10, 10, 0.5);">
+            <div class="card-body">
+                <div class="row">
+                <div class="col-4 offset-2">
+                    <img src="https://d2v9ipibika81v.cloudfront.net/uploads/sites/210/Profile-Icon.png" alt="Avatar"
+                    class="img-fluid my-3 "
+                    style="width: 150px;margin:auto">
+                </div>
+                <div class="col-6 pt-5 text-white">
+                    <h4>Name: {{userobj.userName}}</h4>
+                    <h4>Email: {{userobj.userEmail}}</h4>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div *ngFor="let booking of bookingobj">
+    <p>{{booking.bookingId}}</p>
+</div> -->
+
+
+<div class="container">
+    <div class="row">
+    <h6  class="fw-bold text-white text-center">Your Booking History</h6>
+    <table class="table table-secondary table-striped table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">BookingId</th>
+          <th scope="col">MovieName</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Number of seats</th>
+          <th scope="col">Amount Paid</th>
+          
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookingobj; let i = index">
+          <th scope="row" >{{i+1}}</th>
+          <td class="" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;">{{booking.bookingId}}</td>
+          <td>{{booking.movieName}}</td>
+          <td>{{booking.date}}</td>
+          <td>{{booking.time}}</td>
+          <td>{{booking.noOfSeats}}</td>
+          <td>{{booking.amountPayable}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

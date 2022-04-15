@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainmodelModule } from 'src/mainmodel/mainmodel.module';
 import { HttpClientModule} from '@angular/common/http'
 import { UserauthModule } from 'src/userauth/userauth.module';
+import { UtilityModule } from 'src/utility/utility.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserauthModule } from 'src/userauth/userauth.module';
     AppRoutingModule,
     MainmodelModule,
     HttpClientModule,
-    UserauthModule
+    UserauthModule,
+    UtilityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

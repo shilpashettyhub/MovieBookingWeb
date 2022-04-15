@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListLocationComponent } from './list-location/list-location.component';
 import { TheatrelistComponent } from './theatrelist/theatrelist.component';
@@ -8,6 +8,8 @@ import { BookingPageComponent } from './booking-page/booking-page.component';
 import { PaymentspageComponent } from './paymentspage/paymentspage.component';
 import { FormsModule } from '@angular/forms';
 import { FinalpageComponent } from './finalpage/finalpage.component';
+import { MovieratingpageComponent } from './movieratingpage/movieratingpage.component';
+import { UtilityModule } from 'src/utility/utility.module';
 
 
 
@@ -19,11 +21,13 @@ import { FinalpageComponent } from './finalpage/finalpage.component';
     SeatListComponent,
     BookingPageComponent,
     PaymentspageComponent,
-    FinalpageComponent
+    FinalpageComponent,
+    MovieratingpageComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    UtilityModule
   ],
   exports:[
     ListLocationComponent,
@@ -32,7 +36,9 @@ import { FinalpageComponent } from './finalpage/finalpage.component';
     SeatListComponent,
     BookingPageComponent,
     PaymentspageComponent,
-    FinalpageComponent
-  ]
+    FinalpageComponent,
+    MovieratingpageComponent
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class MainmodelModule { }

@@ -139,4 +139,9 @@ export class GeneralServiceService {
   //   console.log(changeseatflagobj);
   //   return this._http.post<any>("http:localhost:8082/changeseatflag", changeseatflagobj);
   // }
+
+
+  public getMovieInfoFromBackEnd(): Observable<any>{
+    return this._http.get<any>("http://localhost:8088/getmoviedetails/"+this.selectedShowId);
+  }
 }

@@ -1,23 +1,22 @@
 .button-manual-css:hover{
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(120, 240, 7, 0.836), 0 4px 8px rgba(121, 243, 6, 0.89);
-    border-color:rgb(63, 207, 44);
-    color: black;
+    box-shadow: 0 10px 20px rgba(7, 166, 240, 0.836), 0 4px 8px rgba(6, 168, 243, 0.89);
+    border-color:rgb(44, 134, 207);
+    /* color: white; */
 }
 
+.button-manual-css {
+    /* background-color: rgb(18, 127, 199); */
+    border: 2px solid blue;
+    /* color: white; */
+    background-color: transparent;
+}
 .gradient-custom {
-    /* fallback for old browsers
-    background: #6a11cb;
-  
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); */
-  
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))  */
 
     /* background-image: url("../../assets/card.png");
     background-size: cover;
     background-attachment: fixed; */
+    background-color: rgba(59, 54, 54, 0.822);
     height: 100h;
     width: 100vw;
   }
