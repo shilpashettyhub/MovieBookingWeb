@@ -18,10 +18,12 @@ export class PaymentspageComponent implements OnInit {
 
   msg!: string;
 
+  // timeleft!: number
+
   constructor(private _service:GeneralServiceService, private _router:Router) { }
 
   ngOnInit(): void {
-    
+    this.start();
   }
 
   setcardtype(e:any)
@@ -63,5 +65,35 @@ export class PaymentspageComponent implements OnInit {
     //if good change status of seat
     //reroute to new page
   }
+
+  timeLeft = 60;
+
+  interval!: any;
+
+ 
+
+  start(){
+
+    this.interval = setInterval(() => {
+
+    if(this.timeLeft > 0) {
+      
+      this.timeLeft--;
+
+    } else {
+
+      clearInterval(this.interval);
+
+      alert("Time Out!!!.Please try again");
+
+      // this.cardinfoobj.cardName = "";
+
+      this._router.navigate(["seats"]);
+
+    }
+
+  },1000);
+
+}
 
 }
