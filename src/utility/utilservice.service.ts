@@ -28,4 +28,8 @@ export class UtilserviceService {
   public getBookingObjFromUserEmail(): Observable<any>{
     return this._http.get<any>("http://localhost:8080/bookings/"+this.userObj.userEmail);
   }
+
+  public isLoggedIn(){
+    return this.userObj===undefined;
+  }
 }

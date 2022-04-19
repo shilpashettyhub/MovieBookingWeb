@@ -21,6 +21,7 @@ img.sticky {
 .row-css-class{
     width: 100vw; height: 100vh;
     background-image: url("../../assets/locationbg3.png");
-    background-size: cover;
+    background-size: 100vw 100vh;
     opacity: 0.9;
+    background-attachment: fixed;
 }

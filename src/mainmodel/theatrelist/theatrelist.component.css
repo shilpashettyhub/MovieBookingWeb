@@ -27,11 +27,11 @@
 
   .background-image{
       background-image: url("../../assets/theatrebackground.jpg");
-      background-size: cover;
+      background-size: 100vw 100vh;
       background-attachment: fixed;
       /* position: -webkit-sticky;
       position: sticky; */
       /* top: 0; */
-    height: 100pc;
-    width: 100pc;
+    /* height: 100pc;
+    width: 100pc; */
   }

@@ -10,12 +10,12 @@
 
 
     background-image: url("../../assets/bookingbg2.png");
-      background-size: cover;
+      background-size: 100vw 100vh;
       background-attachment: fixed;
 
     background-color: black;
-    height: 100pc;
-    width: 100pc;
+    /* height: 100pc;
+    width: 100pc; */
   }
 
   .button-manual-css:hover{

@@ -19,10 +19,10 @@
       /* background-color: rgb(12, 12, 12); */
       
       background-image: url("../../assets/seatsulta.jpg");
-      background-size: cover;
+      background-size: 100vw 100vh;
       background-attachment: fixed;
-      height: 100pc;
-      width: 100pc; 
+      /* height: 100pc;
+      width: 100pc;  */
 }
 
 button:hover{
@@ -36,6 +36,7 @@ button:hover{
 button{
     margin-left: 49vw; 
     margin-top: 10vh;
+    margin-bottom: 30vh;
     padding-left: 15px;
     padding-right: 15px;
     background-color: gray;

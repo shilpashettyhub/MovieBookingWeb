@@ -4,7 +4,7 @@ import { Bookinginfo } from '../bookinginfo';
 import { GeneralServiceService } from '../general-service.service';
 import { NgForm } from '@angular/forms';
 import { Cardinfo } from '../cardinfo';
-
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-paymentspage',
@@ -24,6 +24,12 @@ export class PaymentspageComponent implements OnInit {
 
   ngOnInit(): void {
     this.start();
+  }
+
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event: any) {
+    clearInterval(this.interval);
+    console.log("interval cleared")
   }
 
   setcardtype(e:any)
@@ -50,6 +56,7 @@ export class PaymentspageComponent implements OnInit {
 
         //   }
         //   );
+        clearInterval(this.interval);
         this._router.navigate(['finalpage']);
 
       },
@@ -66,8 +73,9 @@ export class PaymentspageComponent implements OnInit {
     //reroute to new page
   }
 
-  timeLeft = 60;
-
+  timeLeft = 120;
+  min = 2
+  sec = 0
   interval!: any;
 
  
@@ -79,7 +87,8 @@ export class PaymentspageComponent implements OnInit {
     if(this.timeLeft > 0) {
       
       this.timeLeft--;
-
+      this.min = Math.floor(this.timeLeft/60);
+      this.sec = Math.floor(this.timeLeft%60);
     } else {
 
       clearInterval(this.interval);

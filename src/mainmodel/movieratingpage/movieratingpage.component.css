@@ -4,9 +4,9 @@
 
 .bg-manual{
     background-image: url("https://wallpaperaccess.com/full/5081898.jpg");   
-    background-size: cover;
-    height: 100pc;
-    width: 100pc;
+    background-size: 100vw 100vh;
+    /* height: 100pc;
+    width: 100pc; */
     background-attachment: fixed;
     /* background-position:center; */
 }
